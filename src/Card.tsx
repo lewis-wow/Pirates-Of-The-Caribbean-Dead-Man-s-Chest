@@ -4,9 +4,10 @@ import { usePopper } from 'react-popper';
 export type CardProps = {
   src: string;
   tooltip?: string;
+  isFlipped?: boolean;
 };
 
-export const Card = ({ src, tooltip }: CardProps) => {
+export const Card = ({ src, tooltip, isFlipped = false }: CardProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -22,7 +23,10 @@ export const Card = ({ src, tooltip }: CardProps) => {
       onMouseLeave={() => setTooltipVisible(false)}
     >
       <div ref={setReferenceElement}>
-        <img src={src} className="object-cover w-full h-full rounded-lg shadow-lg" />
+        <img
+          src={isFlipped ? src : '/assets/card_back.png'}
+          className="object-cover w-full h-full rounded-lg shadow-lg"
+        />
       </div>
       {tooltip && isTooltipVisible && (
         <div
