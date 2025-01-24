@@ -1,17 +1,24 @@
 import { Card } from './Card';
+import { CardPosition } from './Position';
 
 export type BoardProps = {
   size: number;
+  initialBoatsPosition: {
+    red: CardPosition;
+    black: CardPosition;
+    blue: CardPosition;
+    purple: CardPosition;
+  };
 };
 
-export const Board = ({ size }: BoardProps) => {
+export const Board = ({ size, initialBoatsPosition }: BoardProps) => {
   const totalGridSize = size + 2;
   const totalCells = size ** 2;
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100 p-4">
       <div
-        className="grid gap-2 h-full"
+        className="grid gap-[0.5px] h-full"
         style={{
           gridTemplateColumns: `repeat(${totalGridSize}, 1fr)`,
           gridTemplateRows: `repeat(${totalGridSize}, 1fr)`,
@@ -27,7 +34,9 @@ export const Board = ({ size }: BoardProps) => {
                 gridArea: `1 / ${index + 1} / 2 / ${index + 2}`,
               }}
             >
-              <div className="flex justify-center items-center w-full h-full text-center">BOAT</div>
+              {initialBoatsPosition.red.x === index + 1 && (
+                <Card key={index} isFlipped src="/assets/boat/boat_purple.png" />
+              )}
             </div>
           );
         })}
@@ -40,7 +49,9 @@ export const Board = ({ size }: BoardProps) => {
                 gridArea: `${totalGridSize} / ${index + 1} / ${totalGridSize} / ${index + 2}`,
               }}
             >
-              <div className="flex justify-center items-center w-full h-full text-center">BOAT</div>
+              {initialBoatsPosition.purple.x === index + 1 && (
+                <Card key={index} isFlipped src="/assets/boat/boat_blue.png" />
+              )}
             </div>
           );
         })}
@@ -53,7 +64,9 @@ export const Board = ({ size }: BoardProps) => {
                 gridArea: `${index + 2} / ${1} / ${index + 3} / ${2}`,
               }}
             >
-              <div className="flex justify-center items-center w-full h-full text-center">BOAT</div>
+              {initialBoatsPosition.black.y === index + 1 && (
+                <Card key={index} isFlipped src="/assets/boat/boat_black.png" />
+              )}
             </div>
           );
         })}
@@ -66,7 +79,9 @@ export const Board = ({ size }: BoardProps) => {
                 gridArea: `${index + 2} / ${totalGridSize} / ${index + 3} / ${totalGridSize + 1}`,
               }}
             >
-              <div className="flex justify-center items-center w-full h-full text-center">BOAT</div>
+              {initialBoatsPosition.blue.y === index + 1 && (
+                <Card key={index} isFlipped src="/assets/boat/boat_red.png" />
+              )}
             </div>
           );
         })}
@@ -77,7 +92,7 @@ export const Board = ({ size }: BoardProps) => {
           }}
         >
           <div
-            className="grid gap-2"
+            className="grid gap-[0.5px]"
             style={{
               gridTemplateColumns: `repeat(${size}, 1fr)`,
               gridTemplateRows: `repeat(${size}, 1fr)`,
