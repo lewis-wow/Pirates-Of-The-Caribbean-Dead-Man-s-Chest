@@ -28,7 +28,7 @@ export const Card = ({ src, tooltip, isFlipped = false }: CardProps) => {
           className="object-cover w-full h-full rounded-lg shadow-lg"
         />
       </div>
-      {tooltip && isTooltipVisible && (
+      {isFlipped && tooltip && isTooltipVisible && (
         <div
           ref={setPopperElement}
           style={styles.popper}
