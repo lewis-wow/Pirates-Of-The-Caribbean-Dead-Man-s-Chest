@@ -3,10 +3,10 @@ import { Card } from '../model/cards/Card';
 import { random } from 'lodash-es';
 import { List } from 'immutable';
 import { Pirate } from '../model/Pirate';
-import { Position } from '../model/movement/Position';
-import { Ship } from '../model/Ship';
+import { Position } from '../model/Position';
+import { Ship } from '../model/tiles/Ship';
 import { Model } from '../model/Model';
-import { EmptySpace } from '../model/EmptySpace';
+import { EmptySpace } from '../model/tiles/EmptySpace';
 import { match } from 'ts-pattern';
 import { Player } from '../model/Player';
 

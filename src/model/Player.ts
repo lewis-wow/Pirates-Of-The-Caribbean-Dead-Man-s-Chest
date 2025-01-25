@@ -1,6 +1,6 @@
 import { match } from 'ts-pattern';
-import { ShipColor } from './Ship';
-import { Position } from './movement/Position';
+import { ShipColor } from './tiles/Ship';
+import { Position } from './Position';
 import { random } from 'lodash-es';
 
 export enum PlayerInitialPosition {

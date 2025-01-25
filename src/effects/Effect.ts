@@ -1,6 +1,6 @@
 import { Pirate } from '../model/Pirate';
 import { Player } from '../model/Player';
-import { Ship } from '../model/Ship';
+import { Ship } from '../model/tiles/Ship';
 
 export abstract class Effect {
   active = true;

@@ -1,13 +1,18 @@
 import { Board } from './components/Board';
+import { Card } from './model/cards/Card';
 import { JackSparrowCard } from './model/cards/JackSparrowCard';
+import { SixCoinsCard } from './model/cards/SixCoinsCard';
+import { ThreeCoinsCard } from './model/cards/ThreeCoinsCard';
 import { TwoCoinsCard } from './model/cards/TwoCoinsCard';
 import { Player, PlayerInitialPosition } from './model/Player';
-import { ShipColor } from './model/Ship';
+import { ShipColor } from './model/tiles/Ship';
 import { random } from 'lodash-es';
 
 const boardSize = 9;
 
-const cards = Array.from({ length: 200 }, () => (random(0, 1) ? new JackSparrowCard() : new TwoCoinsCard()));
+const cardsClasses: (typeof Card)[] = [JackSparrowCard, TwoCoinsCard, ThreeCoinsCard, SixCoinsCard];
+
+const cards = Array.from({ length: 200 }, () => new cardsClasses[random(0, cardsClasses.length - 1)]());
 
 const players = [
   new Player('Player 1', ShipColor.BLACK, PlayerInitialPosition.TOP),

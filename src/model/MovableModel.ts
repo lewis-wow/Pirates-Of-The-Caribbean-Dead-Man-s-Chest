@@ -1,8 +1,8 @@
-import { Direction } from './movement/Direction';
-import { Position } from './movement/Position';
-import { Tile } from './Tile';
+import { Model } from './Model';
+import { Direction } from './Direction';
+import { Position } from './Position';
 
-export class MovableTile extends Tile {
+export class MovableModel extends Model {
   protected position: Position;
   protected movementRules: Direction[];
 

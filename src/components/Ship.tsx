@@ -1,4 +1,4 @@
-import { Ship as ShipModel } from '../model/Ship';
+import { Ship as ShipModel } from '../model/tiles/Ship';
 import { Tile } from './Tile';
 import { TileRenderer } from './TileRenderer';
 

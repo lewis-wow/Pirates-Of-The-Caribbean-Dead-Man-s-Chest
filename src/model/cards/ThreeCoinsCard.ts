@@ -1,7 +1,7 @@
 import { Coin } from '../Coin';
 import { Card } from './Card';
 
-export class TwoCoinsCard extends Card {
+export class ThreeCoinsCard extends Card {
   tooltip = 'Karta s mincemi';
-  coins = [new Coin(), new Coin()];
+  coins = [new Coin(), new Coin(), new Coin()];
 }

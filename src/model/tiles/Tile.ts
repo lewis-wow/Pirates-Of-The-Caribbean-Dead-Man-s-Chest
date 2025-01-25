@@ -1,6 +1,6 @@
-import { Coin } from './Coin';
-import { Model } from './Model';
-import { Pirate } from './Pirate';
+import { Coin } from '../Coin';
+import { Model } from '../Model';
+import { Pirate } from '../Pirate';
 
 export class Tile extends Model {
   protected coins: Coin[] = [];

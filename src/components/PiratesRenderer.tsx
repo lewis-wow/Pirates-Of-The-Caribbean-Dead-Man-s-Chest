@@ -1,6 +1,6 @@
 import { match, P } from 'ts-pattern';
 import { Pirate as PirateModel } from '../model/Pirate';
-import { ShipColor } from '../model/Ship';
+import { ShipColor } from '../model/tiles/Ship';
 
 export type PiratesRendererProps = {
   pirates: PirateModel[];

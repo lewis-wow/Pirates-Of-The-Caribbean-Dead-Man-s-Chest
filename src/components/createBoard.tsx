@@ -1,12 +1,12 @@
 import { match } from 'ts-pattern';
 import { Card } from '../model/cards/Card';
 import { Player } from '../model/Player';
-import { Ship } from '../model/Ship';
+import { Ship } from '../model/tiles/Ship';
 import { random } from 'lodash-es';
-import { EmptySpace } from '../model/EmptySpace';
+import { EmptySpace } from '../model/tiles/EmptySpace';
 import { Pirate } from '../model/Pirate';
-import { Position } from '../model/movement/Position';
-import { Tile } from '../model/Tile';
+import { Position } from '../model/Position';
+import { Tile } from '../model/tiles/Tile';
 import { CenterMainCompas } from '../model/cards/compas/CenterMainCompas';
 import { Compas } from '../model/cards/compas/Compas';
 

@@ -1,6 +1,6 @@
 import { Model } from '../Model';
-import { Direction } from './Direction';
-import { Position } from './Position';
+import { Direction } from '../Direction';
+import { Position } from '../Position';
 
 export class MovableObject extends Model {
   protected position: Position;

@@ -1,6 +1,6 @@
 import { MovableTile } from './MovableTile';
-import { MovementStrategy } from './movement/MovementStrategy';
-import { Position } from './movement/Position';
+import { MovementStrategy } from '../movement/MovementStrategy';
+import { Position } from '../Position';
 
 export enum ShipColor {
   RED = 'RED',
