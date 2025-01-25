@@ -1,11 +1,13 @@
 import { createContext, useContext } from 'react';
 import { Player } from './model/Player';
 import { Board } from './model/Board';
+import { useBoard } from './hooks/useBoard';
 
 export type GameContext = {
   players: Player[];
   size: number;
   board: Board;
+  flipCard: (x: number, y: number) => void;
 };
 
 export const GameContext = createContext<GameContext | undefined>(undefined);
@@ -27,9 +29,7 @@ export type GameProviderProps = {
 };
 
 export const GameProvider = ({ players, size, children }: GameProviderProps) => {
-  return (
-    <GameContext.Provider value={{ players, size, board: Board.generateRandomBoard({ size, players }) }}>
-      {children}
-    </GameContext.Provider>
-  );
+  const { board, flipCard } = useBoard({ size, players });
+
+  return <GameContext.Provider value={{ players, size, board, flipCard }}>{children}</GameContext.Provider>;
 };

@@ -1,9 +1,16 @@
+import { Pirate } from '../Pirate';
 import { Card } from './Card';
 
-export class PlayableCard extends Card {
+export abstract class PlayableCard extends Card {
+  abstract image: string;
+
   constructor() {
-    super({
-      src: 'assets/card_back.png',
-    });
+    super('assets/card_back.png');
+  }
+
+  flip(pirate: Pirate): void {
+    super.flip(pirate);
+
+    this.src = this.image;
   }
 }

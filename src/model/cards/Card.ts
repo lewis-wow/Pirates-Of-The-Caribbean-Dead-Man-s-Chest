@@ -1,16 +1,16 @@
-import { Model } from '../Model';
+import { Pirate } from '../Pirate';
 
-export class Card extends Model {
-  src?: string;
-  isFlipped: boolean = false;
+export class Card {
+  tooltip?: string;
+  isFlipped = false;
 
-  constructor(opts: { src?: string }) {
-    super();
+  constructor(public src?: string) {}
 
-    this.src = opts.src;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onFlip(_pirate: Pirate): void {}
 
-  flip() {
+  flip(pirate: Pirate): void {
     this.isFlipped = true;
+    this.onFlip(pirate);
   }
 }

@@ -4,10 +4,11 @@ import { usePopper } from 'react-popper';
 export type CardProps = {
   src?: string;
   tooltip?: string;
-  isFlipped?: boolean;
+  isFlipped: boolean;
+  onClick?: () => void;
 };
 
-export const Card = ({ src, tooltip, isFlipped = false }: CardProps) => {
+export const Card = ({ src, tooltip, isFlipped, onClick }: CardProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -21,6 +22,7 @@ export const Card = ({ src, tooltip, isFlipped = false }: CardProps) => {
       className="relative aspect-w-1 aspect-h-1 w-full max-w-xs"
       onMouseEnter={() => setTooltipVisible(true)}
       onMouseLeave={() => setTooltipVisible(false)}
+      onClick={onClick}
     >
       <div ref={setReferenceElement}>
         {src && (

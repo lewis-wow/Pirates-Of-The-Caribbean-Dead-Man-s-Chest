@@ -15,7 +15,16 @@ export const Board = () => {
               gridArea: `${i + 1} / ${j + 1} / ${i + 2} / ${j + 2}`,
             }}
           >
-            <Card key={`${i}-${j}`} isFlipped={card.isFlipped} src={card.src} />
+            <Card
+              key={`${i}-${j}`}
+              onClick={() => {
+                console.log('flip card', i, j);
+                gameContext.flipCard(i, j);
+              }}
+              isFlipped={card.isFlipped}
+              src={card.src}
+              tooltip={card.tooltip}
+            />
           </div>
         ))
       )}
