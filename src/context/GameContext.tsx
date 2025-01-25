@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 import { useBoard, UseBoardPayload } from '../hooks/useBoard';
 import { Card } from '../model/cards/Card';
+import { Player } from '../model/Player';
 
 export type GameContext = {
   boardSize: number;
@@ -22,11 +23,12 @@ export const useGameContext = () => {
 export type GameProviderProps = {
   boardSize: number;
   cards: Card[];
+  players: Player[];
   children?: React.ReactNode;
 };
 
-export const GameProvider = ({ boardSize, cards, children }: GameProviderProps) => {
-  const board = useBoard({ boardSize, cards });
+export const GameProvider = ({ boardSize, cards, players, children }: GameProviderProps) => {
+  const board = useBoard({ boardSize, cards, players });
 
   return <GameContext.Provider value={{ boardSize, board }}>{children}</GameContext.Provider>;
 };

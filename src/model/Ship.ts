@@ -2,8 +2,15 @@ import { MovableObject } from './movement/MovableObject';
 import { MovementStrategy } from './movement/MovementStrategy';
 import { Position } from './movement/Position';
 
+export enum ShipColor {
+  RED = 'RED',
+  BLUE = 'BLUE',
+  PURPLE = 'PURPLE',
+  BLACK = 'BLACK',
+}
+
 export class Ship extends MovableObject {
-  constructor(public color: 'red' | 'blue' | 'purple' | 'black', initialPosition: Position) {
+  constructor(public shipColor: ShipColor, initialPosition: Position) {
     super(initialPosition, MovementStrategy.orthogonalDirections);
   }
 

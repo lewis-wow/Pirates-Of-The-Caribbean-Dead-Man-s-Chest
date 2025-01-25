@@ -6,5 +6,5 @@ export type ShipProps = {
 };
 
 export const Ship = ({ shipModel }: ShipProps) => {
-  return <Card src={`/assets/ship/ship_${shipModel.color}.png`} tooltip="Loď" isFlipped />;
+  return <Card src={`/assets/ship/ship_${shipModel.shipColor.toLowerCase()}.png`} tooltip="Loď" isFlipped />;
 };

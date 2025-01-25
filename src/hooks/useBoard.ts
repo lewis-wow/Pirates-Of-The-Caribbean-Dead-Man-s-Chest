@@ -8,9 +8,11 @@ import { Ship } from '../model/Ship';
 import { Model } from '../model/Model';
 import { EmptyCard } from '../model/cards/EmptyCard';
 import { match } from 'ts-pattern';
+import { Player } from '../model/Player';
 
 export type UseBoardProps = {
   boardSize: number;
+  players: Player[];
   cards: Card[];
 };
 
@@ -19,8 +21,8 @@ export type UseBoardPayload = {
   movePirateTo: (pirate: Pirate, rowIndex: number, colIndex: number) => void;
 };
 
-export const useBoard = ({ boardSize, cards }: UseBoardProps): UseBoardPayload => {
-  const [grid, setGrid] = useState<List<List<Model>>>(generateRandomGrid({ boardSize, cards }));
+export const useBoard = ({ boardSize, cards, players }: UseBoardProps): UseBoardPayload => {
+  const [grid, setGrid] = useState<List<List<Model>>>(generateRandomGrid({ boardSize, cards, players }));
 
   const movePirateTo = (pirate: Pirate, rowIndex: number, colIndex: number) => {
     setGrid((prevGrid) =>
@@ -46,18 +48,9 @@ export const useBoard = ({ boardSize, cards }: UseBoardProps): UseBoardPayload =
   return { grid, movePirateTo };
 };
 
-const colors = ['red', 'blue', 'purple', 'black'] as const;
-
-const generateRandomGrid = ({ boardSize, cards }: UseBoardProps) => {
-  const shipPositions = {
-    top: { rowIndex: 0, colIndex: random(1, boardSize - 2) },
-    bottom: { rowIndex: boardSize - 1, colIndex: random(1, boardSize - 2) },
-    left: { rowIndex: random(1, boardSize - 2), colIndex: 0 },
-    right: { rowIndex: random(1, boardSize - 2), colIndex: boardSize - 1 },
-  };
-
-  const ships = Object.values(shipPositions).map(
-    ({ rowIndex, colIndex }, index) => new Ship(colors[index], new Position(rowIndex, colIndex))
+const generateRandomGrid = ({ boardSize, cards, players }: UseBoardProps) => {
+  const ships = players.map(
+    (player) => new Ship(player.shipColor, player.generateRandomInitializationShipPosition(boardSize))
   );
 
   return List.of(
