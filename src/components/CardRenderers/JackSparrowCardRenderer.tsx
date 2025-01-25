@@ -5,5 +5,5 @@ export type JackSparrowCardRendererProps = {
 };
 
 export const JackSparrowCardRenderer = ({ jackSparrowCardModel }: JackSparrowCardRendererProps) => {
-  return <img src={jackSparrowCardModel.image} alt="Jack Sparrow Card" />;
+  return <img src="/assets/card/jack_sparrow.png" alt="Jack Sparrow Card" />;
 };
