@@ -1,15 +1,12 @@
 import { ReactNode, useState } from 'react';
 import { usePopper } from 'react-popper';
 
-export type CardProps = {
-  src?: string;
+export type TileProps = {
   tooltip?: string;
-  isFlipped: boolean;
-  onClick?: () => void;
   children?: ReactNode;
 };
 
-export const Card = ({ src, tooltip, isFlipped, onClick, children }: CardProps) => {
+export const Tile = ({ tooltip, children }: TileProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -20,22 +17,14 @@ export const Card = ({ src, tooltip, isFlipped, onClick, children }: CardProps) 
 
   return (
     <div
-      className="relative aspect-w-1 aspect-h-1 w-full max-w-xs"
+      className="relative aspect-w-1 aspect-h-1 rounded-lg overflow-hidden"
       onMouseEnter={() => setTooltipVisible(true)}
       onMouseLeave={() => setTooltipVisible(false)}
-      onClick={onClick}
     >
-      <div ref={setReferenceElement}>
-        {src && (
-          <img
-            src={isFlipped ? src : '/assets/card_back.png'}
-            className="object-cover w-full h-full rounded-lg shadow-lg"
-          />
-        )}
-
+      <div ref={setReferenceElement} className="relative flex justify-center items-center w-full h-full">
         {children}
       </div>
-      {isFlipped && tooltip && isTooltipVisible && (
+      {tooltip && isTooltipVisible && (
         <div
           ref={setPopperElement}
           style={styles.popper}

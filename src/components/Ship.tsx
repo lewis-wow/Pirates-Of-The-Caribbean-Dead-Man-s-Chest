@@ -1,10 +1,14 @@
-import { Card } from './Card';
 import { Ship as ShipModel } from '../model/Ship';
+import { Tile } from './Tile';
 
 export type ShipProps = {
   shipModel: ShipModel;
 };
 
 export const Ship = ({ shipModel }: ShipProps) => {
-  return <Card src={`/assets/ship/ship_${shipModel.shipColor.toLowerCase()}.png`} tooltip="Loď" isFlipped />;
+  return (
+    <Tile tooltip="Loď">
+      <img src={`/assets/ship/ship_${shipModel.shipColor.toLowerCase()}.png`} alt="Ship" />
+    </Tile>
+  );
 };

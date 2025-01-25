@@ -6,7 +6,7 @@ import { Pirate } from '../model/Pirate';
 import { Position } from '../model/movement/Position';
 import { Ship } from '../model/Ship';
 import { Model } from '../model/Model';
-import { EmptyCard } from '../model/cards/EmptyCard';
+import { EmptySpace } from '../model/EmptySpace';
 import { match } from 'ts-pattern';
 import { Player } from '../model/Player';
 
@@ -67,7 +67,7 @@ const generateRandomGrid = ({ boardSize, cards, players }: UseBoardProps) => {
               { colIndex: 0 },
               { rowIndex: boardSize - 1 },
               { colIndex: boardSize - 1 },
-              () => new EmptyCard()
+              () => new EmptySpace()
             )
             .otherwise(() => {
               const randomIndex = random(0, cards.length - 1);

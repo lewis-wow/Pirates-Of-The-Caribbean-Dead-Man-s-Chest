@@ -1,3 +1,4 @@
+import { Coin } from '../Coin';
 import { Model } from '../Model';
 import { Pirate } from '../Pirate';
 
@@ -5,11 +6,8 @@ export class Card extends Model {
   tooltip?: string;
   isFlipped = false;
   pirates: Pirate[] = [];
-  coins = 0;
-
-  constructor(public src?: string) {
-    super();
-  }
+  coins: Coin[] = [];
+  image?: string;
 
   addPirate(pirate: Pirate): void {
     this.pirates.push(pirate);

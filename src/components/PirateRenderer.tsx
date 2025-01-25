@@ -1,9 +1,9 @@
 import { Pirate as PirateModel } from '../model/Pirate';
 
-export type PirateProps = {
+export type PirateRendererProps = {
   pirateModel: PirateModel;
 };
 
-export const Pirate = ({ pirateModel }: PirateProps) => {
+export const PirateRenderer = ({ pirateModel }: PirateRendererProps) => {
   return <div>{JSON.stringify(pirateModel)}</div>;
 };

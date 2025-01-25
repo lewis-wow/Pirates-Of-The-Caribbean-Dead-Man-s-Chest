@@ -15,8 +15,8 @@ export const BoardGrid = ({ children }: BoardGridProps) => {
         style={{
           gridTemplateColumns: `repeat(${gameContext.boardSize}, 1fr)`,
           gridTemplateRows: `repeat(${gameContext.boardSize}, 1fr)`,
-          width: `min(90vw, 90vh)`,
-          height: `min(90vw, 90vh)`,
+          width: `min(95vw, 95vh)`,
+          height: `min(95vw, 95vh)`,
         }}
       >
         {children}

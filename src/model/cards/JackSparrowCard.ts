@@ -1,6 +1,8 @@
-import { PlayableCard } from './PlayableCard';
+import { Card } from './Card';
 
-export class JackSparrowCard extends PlayableCard {
+export class JackSparrowCard extends Card {
   tooltip = 'Jack Sparrow ti narve kladu do prdele';
-  image = 'assets/cards/jack_sparrow.png';
+  image = 'assets/card/jack_sparrow.png';
+  isFlipped = false;
+  coins = [];
 }

@@ -1,21 +1,31 @@
 import { BoardGrid } from './BoardGrid';
-import { useGameContext } from '../context/GameContext';
-import { Renderer } from './Renderer';
+import { TileRenderer } from './TileRenderer';
+import { Player } from '../model/Player';
+import { Card } from '../model/cards/Card';
+import { useState } from 'react';
+import { createBoard } from './createBoard';
+import { Model } from '../model/Model';
 
-export const Board = () => {
-  const gameContext = useGameContext();
+export type BoardProps = {
+  boardSize: number;
+  cards: Card[];
+  players: Player[];
+};
+
+export const Board = ({ boardSize, cards, players }: BoardProps) => {
+  const [board] = useState<Model[][]>(createBoard({ boardSize, cards, players }));
 
   return (
     <BoardGrid>
-      {gameContext.board.grid.toArray().map((row, i) =>
-        row.toArray().map((card, j) => (
+      {board.map((row, rowIndex) =>
+        row.map((tile, colIndex) => (
           <div
-            key={`${i}-${j}`}
+            key={`${rowIndex}-${colIndex}`}
             style={{
-              gridArea: `${i + 1} / ${j + 1} / ${i + 2} / ${j + 2}`,
+              gridArea: `${rowIndex + 1} / ${colIndex + 1} / ${rowIndex + 2} / ${colIndex + 2}`,
             }}
           >
-            <Renderer model={card} />
+            <TileRenderer model={tile} />
           </div>
         ))
       )}
