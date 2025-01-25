@@ -1,7 +1,11 @@
 import { Board } from './components/Board';
+import { AnchorCard } from './model/cards/AnchorCard';
+import { BlackPearlCard } from './model/cards/BlackPearlCard';
 import { Card } from './model/cards/Card';
+import { DaggerCard } from './model/cards/DaggerCard';
 import { JackSparrowCard } from './model/cards/JackSparrowCard';
 import { SixCoinsCard } from './model/cards/SixCoinsCard';
+import { SkullCard } from './model/cards/SkullCard';
 import { ThreeCoinsCard } from './model/cards/ThreeCoinsCard';
 import { TwoCoinsCard } from './model/cards/TwoCoinsCard';
 import { Player, PlayerInitialPosition } from './model/Player';
@@ -10,7 +14,16 @@ import { random } from 'lodash-es';
 
 const boardSize = 9;
 
-const cardsClasses: (typeof Card)[] = [JackSparrowCard, TwoCoinsCard, ThreeCoinsCard, SixCoinsCard];
+const cardsClasses: (typeof Card)[] = [
+  JackSparrowCard,
+  TwoCoinsCard,
+  ThreeCoinsCard,
+  SixCoinsCard,
+  AnchorCard,
+  SkullCard,
+  DaggerCard,
+  BlackPearlCard,
+];
 
 const cards = Array.from({ length: 200 }, () => new cardsClasses[random(0, cardsClasses.length - 1)]());
 
