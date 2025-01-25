@@ -1,17 +1,14 @@
 import { Board } from './Board';
 import { GameProvider } from './GameContext';
-import { Player } from './model/Player';
+import { JackSparrowCard } from './model/cards/JackSparrowCard';
 
 const boardSize = 9;
 
-const players = [
-  new Player({ name: 'Test', color: 'red', initialPosition: 'top', boardSize }),
-  new Player({ name: 'Test 2', color: 'black', initialPosition: 'bottom', boardSize }),
-];
+const cards = Array.from({ length: 200 }, () => new JackSparrowCard());
 
 export const App = () => {
   return (
-    <GameProvider players={players} size={9}>
+    <GameProvider boardSize={boardSize} cards={cards}>
       <Board />
     </GameProvider>
   );

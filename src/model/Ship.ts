@@ -3,7 +3,7 @@ import { MovementStrategy } from './movement/MovementStrategy';
 import { Position } from './movement/Position';
 
 export class Ship extends MovableObject {
-  constructor(initialPosition: Position) {
+  constructor(public color: 'red' | 'blue' | 'purple' | 'black', initialPosition: Position) {
     super(initialPosition, MovementStrategy.orthogonalDirections);
   }
 

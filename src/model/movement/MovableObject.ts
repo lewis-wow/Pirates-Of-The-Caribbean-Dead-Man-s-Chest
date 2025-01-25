@@ -1,11 +1,14 @@
+import { Model } from '../Model';
 import { Direction } from './Direction';
 import { Position } from './Position';
 
-export class MovableObject {
+export class MovableObject extends Model {
   protected position: Position;
   protected movementRules: Direction[];
 
   constructor(initialPosition: Position, initialMovementRules: Direction[]) {
+    super();
+
     this.position = initialPosition;
     this.movementRules = initialMovementRules;
   }

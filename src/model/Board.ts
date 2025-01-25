@@ -2,11 +2,9 @@ import { match } from 'ts-pattern';
 import { Card } from './cards/Card';
 import { EmptyCard } from './cards/EmptyCard';
 import { random } from 'lodash-es';
-import { Position } from './movement/Position';
-import { Ship } from './Ship';
 
 export class Board {
-  public grid: any[][];
+  public grid: Card[][];
 
   constructor(public boardSize: number, public cards: Card[]) {
     this.grid = Array.from({ length: boardSize }, (_, rowIndex) =>
@@ -28,11 +26,5 @@ export class Board {
           })
       )
     );
-  }
-
-  addPlayerShip(position: Position) {
-    const ship = new Ship(position);
-
-    this.grid[position.x][position.y] = ship;
   }
 }

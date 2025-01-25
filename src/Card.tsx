@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { usePopper } from 'react-popper';
 
 export type CardProps = {
@@ -6,9 +6,10 @@ export type CardProps = {
   tooltip?: string;
   isFlipped: boolean;
   onClick?: () => void;
+  children?: ReactNode;
 };
 
-export const Card = ({ src, tooltip, isFlipped, onClick }: CardProps) => {
+export const Card = ({ src, tooltip, isFlipped, onClick, children }: CardProps) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
   const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -31,6 +32,8 @@ export const Card = ({ src, tooltip, isFlipped, onClick }: CardProps) => {
             className="object-cover w-full h-full rounded-lg shadow-lg"
           />
         )}
+
+        {children}
       </div>
       {isFlipped && tooltip && isTooltipVisible && (
         <div

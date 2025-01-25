@@ -13,8 +13,8 @@ export const BoardGrid = ({ children }: BoardGridProps) => {
       <div
         className="grid gap-[0.5px] h-full"
         style={{
-          gridTemplateColumns: `repeat(${gameContext.size}, 1fr)`,
-          gridTemplateRows: `repeat(${gameContext.size}, 1fr)`,
+          gridTemplateColumns: `repeat(${gameContext.boardSize}, 1fr)`,
+          gridTemplateRows: `repeat(${gameContext.boardSize}, 1fr)`,
           width: `min(90vw, 90vh)`,
           height: `min(90vw, 90vh)`,
         }}
