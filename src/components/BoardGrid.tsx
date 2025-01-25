@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useGameContext } from './GameContext';
+import { useGameContext } from '../context/GameContext';
 
 export type BoardGridProps = {
   children?: ReactNode;

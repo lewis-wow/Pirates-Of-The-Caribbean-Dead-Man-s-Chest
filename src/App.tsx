@@ -1,5 +1,5 @@
-import { Board } from './Board';
-import { GameProvider } from './GameContext';
+import { Board } from './components/Board';
+import { GameProvider } from './context/GameContext';
 import { JackSparrowCard } from './model/cards/JackSparrowCard';
 
 const boardSize = 9;

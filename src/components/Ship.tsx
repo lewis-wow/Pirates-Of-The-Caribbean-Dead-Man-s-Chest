@@ -1,4 +1,4 @@
-import { Card } from '../Card';
+import { Card } from './Card';
 import { Ship as ShipModel } from '../model/Ship';
 
 export type ShipProps = {

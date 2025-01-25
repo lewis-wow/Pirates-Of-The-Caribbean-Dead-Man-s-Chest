@@ -1,4 +1,4 @@
-import { Card } from '../Card';
+import { Card } from './Card';
 import { Card as CardModel } from '../model/cards/Card';
 import { Coin as CoinModel } from '../model/Coin';
 import { Renderer } from './Renderer';

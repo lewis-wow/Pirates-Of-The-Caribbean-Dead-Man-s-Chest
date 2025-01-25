@@ -1,6 +1,6 @@
 import { BoardGrid } from './BoardGrid';
-import { useGameContext } from './GameContext';
-import { Renderer } from './components/Renderer';
+import { useGameContext } from '../context/GameContext';
+import { Renderer } from './Renderer';
 
 export const Board = () => {
   const gameContext = useGameContext();
