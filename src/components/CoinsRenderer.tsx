@@ -1,10 +1,10 @@
 import { Coin } from '../model/Coin';
 
-export type CoinsTileProps = {
+export type CoinsRendererProps = {
   coins: Coin[];
 };
 
-export const CoinsTile = ({ coins }: CoinsTileProps) => {
+export const CoinsRenderer = ({ coins }: CoinsRendererProps) => {
   return (
     <div className="absolute h-full w-full top-0 left-0">
       {coins.map((_coin, index) => (

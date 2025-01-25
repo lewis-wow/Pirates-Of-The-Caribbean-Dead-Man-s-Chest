@@ -1,3 +1,3 @@
-import { Model } from './Model';
+import { Tile } from './Tile';
 
-export class EmptySpace extends Model {}
+export class EmptySpace extends Tile {}

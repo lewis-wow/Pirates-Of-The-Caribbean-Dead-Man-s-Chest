@@ -1,10 +1,12 @@
 import { match } from 'ts-pattern';
 import { Card } from '../model/cards/Card';
-import { Model } from '../model/Model';
 import { Player } from '../model/Player';
 import { Ship } from '../model/Ship';
 import { random } from 'lodash-es';
 import { EmptySpace } from '../model/EmptySpace';
+import { Pirate } from '../model/Pirate';
+import { Position } from '../model/movement/Position';
+import { Tile } from '../model/Tile';
 
 export type CreateBoardArgs = {
   boardSize: number;
@@ -12,12 +14,23 @@ export type CreateBoardArgs = {
   players: Player[];
 };
 
-export type CreateBoardPayload = Model[][];
+export type CreateBoardPayload = Tile[][];
 
 export const createBoard = ({ boardSize, cards, players }: CreateBoardArgs): CreateBoardPayload => {
   const ships = players.map(
     (player) => new Ship(player.shipColor, player.generateRandomInitializationShipPosition(boardSize))
   );
+
+  const pirates = ships.map((ship) => [
+    new Pirate(ship.shipColor, new Position(ship.getPosition().x, ship.getPosition().y)),
+    new Pirate(ship.shipColor, new Position(ship.getPosition().x, ship.getPosition().y)),
+    new Pirate(ship.shipColor, new Position(ship.getPosition().x, ship.getPosition().y)),
+    new Pirate(ship.shipColor, new Position(ship.getPosition().x, ship.getPosition().y)),
+  ]);
+
+  ships.forEach((ship, index) => {
+    ship.addPirate(pirates[index]);
+  });
 
   const board = Array.from({ length: boardSize }, (_, rowIndex) =>
     Array.from({ length: boardSize }, (_, colIndex) => {

@@ -1,4 +1,4 @@
-import { MovableObject } from './movement/MovableObject';
+import { MovableTile } from './MovableTile';
 import { MovementStrategy } from './movement/MovementStrategy';
 import { Position } from './movement/Position';
 
@@ -9,7 +9,7 @@ export enum ShipColor {
   BLACK = 'BLACK',
 }
 
-export class Ship extends MovableObject {
+export class Ship extends MovableTile {
   constructor(public shipColor: ShipColor, initialPosition: Position) {
     super(initialPosition, MovementStrategy.orthogonalDirections);
   }

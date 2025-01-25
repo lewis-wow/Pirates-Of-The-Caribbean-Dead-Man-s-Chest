@@ -1,8 +1,8 @@
 import { Coin } from '../Coin';
-import { Model } from '../Model';
 import { Pirate } from '../Pirate';
+import { Tile } from '../Tile';
 
-export class Card extends Model {
+export class Card extends Tile {
   tooltip?: string;
   isFlipped = false;
   pirates: Pirate[] = [];

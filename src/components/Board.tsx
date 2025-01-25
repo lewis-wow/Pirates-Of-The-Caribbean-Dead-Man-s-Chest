@@ -16,7 +16,7 @@ export const Board = ({ boardSize, cards, players }: BoardProps) => {
   const [board] = useState<Model[][]>(createBoard({ boardSize, cards, players }));
 
   return (
-    <BoardGrid>
+    <BoardGrid boardSize={boardSize}>
       {board.map((row, rowIndex) =>
         row.map((tile, colIndex) => (
           <div

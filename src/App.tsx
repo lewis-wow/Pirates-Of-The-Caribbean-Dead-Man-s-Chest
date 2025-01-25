@@ -1,5 +1,4 @@
 import { Board } from './components/Board';
-import { GameProvider } from './context/GameContext';
 import { JackSparrowCard } from './model/cards/JackSparrowCard';
 import { TwoCoinsCard } from './model/cards/TwoCoinsCard';
 import { Player, PlayerInitialPosition } from './model/Player';
@@ -16,9 +15,5 @@ const players = [
 ];
 
 export const App = () => {
-  return (
-    <GameProvider boardSize={boardSize} cards={cards} players={players}>
-      <Board boardSize={boardSize} cards={cards} players={players} />
-    </GameProvider>
-  );
+  return <Board boardSize={boardSize} cards={cards} players={players} />;
 };
