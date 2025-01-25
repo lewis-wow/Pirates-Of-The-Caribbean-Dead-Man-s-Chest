@@ -22,12 +22,12 @@ export const TileRenderer = ({ model }: TileRendererProps) => {
     <div className="w-full h-full">
       {match(model)
         .with(P.instanceOf(EmptySpace), () => <div />)
+        .with(P.instanceOf(CardModel), (cardModel) => <PlayableTile cardModel={cardModel} />)
         .with(P.instanceOf(CompasModel), (compasModel) => <CompasTile compasModel={compasModel} />)
         .with(P.instanceOf(ShipModel), (shipModel) => <ShipComponent shipModel={shipModel} />)
         .with(P.array(P.instanceOf(PirateModel)), (pirates) => <PiratesRenderer pirates={pirates} />)
         .with(P.array(P.instanceOf(CoinModel)), (coins) => <CoinsRenderer coins={coins} />)
         .with(P.instanceOf(CoinModel), () => <CoinRenderer />)
-        .with(P.instanceOf(CardModel), (cardModel) => <PlayableTile cardModel={cardModel} />)
         .otherwise(() => (
           <div>?</div>
         ))}
