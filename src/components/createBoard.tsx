@@ -7,6 +7,8 @@ import { EmptySpace } from '../model/EmptySpace';
 import { Pirate } from '../model/Pirate';
 import { Position } from '../model/movement/Position';
 import { Tile } from '../model/Tile';
+import { CenterMainCompas } from '../model/cards/compas/CenterMainCompas';
+import { Compas } from '../model/cards/compas/Compas';
 
 export type CreateBoardArgs = {
   boardSize: number;
@@ -39,6 +41,10 @@ export const createBoard = ({ boardSize, cards, players }: CreateBoardArgs): Cre
       if (ship) return ship;
 
       return match({ rowIndex, colIndex })
+        .with(
+          { rowIndex: Math.floor(boardSize / 2), colIndex: Math.floor(boardSize / 2) },
+          () => new CenterMainCompas(Compas.createRandomCompasRotation())
+        )
         .with(
           { rowIndex: 0 },
           { colIndex: 0 },
