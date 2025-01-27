@@ -1,4 +1,6 @@
-import { Compas as CompasModel } from '../model/cards/compas/Compas';
+'use client';
+
+import { Compas as CompasModel } from '../server/model/cards/compas/Compas';
 import { Tile } from './Tile';
 
 export type CompasTileProps = {

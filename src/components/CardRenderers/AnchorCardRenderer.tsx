@@ -1,4 +1,4 @@
-import { AnchorCard as AnchorCardModel } from '../../model/cards/AnchorCard';
+import { AnchorCard as AnchorCardModel } from '../../server/model/cards/AnchorCard';
 
 export type AnchorCardRendererProps = {
   anchorCardModel: AnchorCardModel;

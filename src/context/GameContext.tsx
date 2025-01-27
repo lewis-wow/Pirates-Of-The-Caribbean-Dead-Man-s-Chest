@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { useBoard, UseBoardPayload } from '../hooks/useBoard';
-import { Card } from '../model/cards/Card';
-import { Player } from '../model/Player';
+import { Card } from '../server/model/cards/Card';
+import { Player } from '../server/model/Player';
 
 export type GameContext = {
   boardSize: number;

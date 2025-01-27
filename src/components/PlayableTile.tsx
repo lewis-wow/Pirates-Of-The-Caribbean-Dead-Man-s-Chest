@@ -1,5 +1,7 @@
+'use client';
+
 import { match } from 'ts-pattern';
-import { Card as CardModel } from '../model/cards/Card';
+import { Card as CardModel } from '../server/model/cards/Card';
 import { Tile } from './Tile';
 import { CardRenderer } from './CardRenderers/CardRenderer';
 

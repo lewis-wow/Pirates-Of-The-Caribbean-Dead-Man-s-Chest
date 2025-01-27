@@ -1,4 +1,6 @@
-import { Coin } from '../model/Coin';
+'use client';
+
+import { Coin } from '../server/model/Coin';
 
 export type CoinsRendererProps = {
   coins: Coin[];

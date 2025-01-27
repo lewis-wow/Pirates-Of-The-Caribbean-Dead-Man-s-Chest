@@ -1,4 +1,6 @@
-import { Ship as ShipModel } from '../model/tiles/Ship';
+'use client';
+
+import { Ship as ShipModel } from '../server/model/tiles/Ship';
 import { Tile } from './Tile';
 import { TileRenderer } from './TileRenderer';
 

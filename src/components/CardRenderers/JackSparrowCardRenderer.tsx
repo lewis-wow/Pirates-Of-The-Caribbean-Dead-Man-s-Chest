@@ -1,4 +1,4 @@
-import { JackSparrowCard as JackSparrowCardModel } from '../../model/cards/JackSparrowCard';
+import { JackSparrowCard as JackSparrowCardModel } from '../../server/model/cards/JackSparrowCard';
 
 export type JackSparrowCardRendererProps = {
   jackSparrowCardModel: JackSparrowCardModel;

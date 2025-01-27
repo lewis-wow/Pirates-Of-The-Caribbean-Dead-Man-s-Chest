@@ -1,16 +1,10 @@
 import { MovableTile } from './MovableTile';
 import { MovementStrategy } from '../movement/MovementStrategy';
 import { Position } from '../Position';
-
-export enum ShipColor {
-  RED = 'RED',
-  BLUE = 'BLUE',
-  PURPLE = 'PURPLE',
-  BLACK = 'BLACK',
-}
+import { ShipColorEnum } from '@/validations';
 
 export class Ship extends MovableTile {
-  constructor(public shipColor: ShipColor, initialPosition: Position) {
+  constructor(public shipColor: ShipColorEnum, initialPosition: Position) {
     super(initialPosition, MovementStrategy.orthogonalDirections);
   }
 

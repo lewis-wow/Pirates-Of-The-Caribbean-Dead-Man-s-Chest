@@ -3,32 +3,24 @@ import { Direction } from './Direction';
 import { Position } from './Position';
 
 export class MovableModel extends Model {
-  protected position: Position;
-  protected movementRules: Direction[];
+  position: Position;
+  allowedDirections: Direction[];
 
-  constructor(initialPosition: Position, initialMovementRules: Direction[]) {
+  constructor(initialPosition: Position, allowedDirections: Direction[]) {
     super();
 
     this.position = initialPosition;
-    this.movementRules = initialMovementRules;
+    this.allowedDirections = allowedDirections;
   }
 
   isMoveValid(newPosition: Position, boardSize: number): boolean {
-    return newPosition.checkBoardBoundaries(boardSize);
-  }
-
-  getPosition(): Position {
-    return this.position;
-  }
-
-  getMovementRules(): Direction[] {
-    return this.movementRules;
+    return true;
   }
 
   getPossibleMoves(boardSize: number): Position[] {
     const moves: Position[] = [];
 
-    for (const direction of this.movementRules) {
+    for (const direction of this.allowedDirections) {
       const newPosition = new Position(this.position.x + direction.x, this.position.y + direction.y);
 
       if (this.isMoveValid(newPosition, boardSize)) {

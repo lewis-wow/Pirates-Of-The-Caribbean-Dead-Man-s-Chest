@@ -1,10 +1,12 @@
+'use client';
+
 import { BoardGrid } from './BoardGrid';
 import { TileRenderer } from './TileRenderer';
-import { Player } from '../model/Player';
-import { Card } from '../model/cards/Card';
+import { Player } from '../server/model/Player';
+import { Card } from '../server/model/cards/Card';
 import { useState } from 'react';
 import { createBoard } from './createBoard';
-import { Model } from '../model/Model';
+import { Model } from '../server/model/Model';
 
 export type BoardProps = {
   boardSize: number;

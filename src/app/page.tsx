@@ -1,15 +1,15 @@
 import { Board } from '../components/Board';
-import { AnchorCard } from '../model/cards/AnchorCard';
-import { BlackPearlCard } from '../model/cards/BlackPearlCard';
-import { Card } from '../model/cards/Card';
-import { DaggerCard } from '../model/cards/DaggerCard';
-import { JackSparrowCard } from '../model/cards/JackSparrowCard';
-import { SixCoinsCard } from '../model/cards/SixCoinsCard';
-import { SkullCard } from '../model/cards/SkullCard';
-import { ThreeCoinsCard } from '../model/cards/ThreeCoinsCard';
-import { TwoCoinsCard } from '../model/cards/TwoCoinsCard';
-import { Player, PlayerInitialPosition } from '../model/Player';
-import { ShipColor } from '../model/tiles/Ship';
+import { AnchorCard } from '../server/model/cards/AnchorCard';
+import { BlackPearlCard } from '../server/model/cards/BlackPearlCard';
+import { Card } from '../server/model/cards/Card';
+import { DaggerCard } from '../server/model/cards/DaggerCard';
+import { JackSparrowCard } from '../server/model/cards/JackSparrowCard';
+import { SixCoinsCard } from '../server/model/cards/SixCoinsCard';
+import { SkullCard } from '../server/model/cards/SkullCard';
+import { ThreeCoinsCard } from '../server/model/cards/ThreeCoinsCard';
+import { TwoCoinsCard } from '../server/model/cards/TwoCoinsCard';
+import { Player, PlayerInitialPosition } from '../server/model/Player';
+import { ShipColor } from '../server/model/tiles/Ship';
 import { random } from 'lodash-es';
 
 const boardSize = 9;

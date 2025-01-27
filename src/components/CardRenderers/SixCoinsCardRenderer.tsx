@@ -1,4 +1,4 @@
-import { SixCoinsCard as SixCoinsCardModel } from '../../model/cards/SixCoinsCard';
+import { SixCoinsCard as SixCoinsCardModel } from '../../server/model/cards/SixCoinsCard';
 import { TileRenderer } from '../TileRenderer';
 
 export type SixCoinsCardRendererProps = {

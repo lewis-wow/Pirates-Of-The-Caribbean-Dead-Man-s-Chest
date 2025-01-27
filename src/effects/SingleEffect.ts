@@ -1,6 +1,6 @@
-import { Pirate } from '../model/Pirate';
-import { Player } from '../model/Player';
-import { Ship } from '../model/tiles/Ship';
+import { Pirate } from '../server/model/Pirate';
+import { Player } from '../server/model/Player';
+import { Ship } from '../server/model/tiles/Ship';
 import { Effect } from './Effect';
 
 export abstract class SingleEffect extends Effect {
