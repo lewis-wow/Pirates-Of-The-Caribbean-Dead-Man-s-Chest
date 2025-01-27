@@ -1,6 +1,8 @@
+'use client';
+
 import { match, P } from 'ts-pattern';
-import { Pirate as PirateModel } from '../model/Pirate';
-import { ShipColor } from '../model/tiles/Ship';
+import { Pirate as PirateModel } from '../server/model/Pirate';
+import { ShipColorEnum } from '@/validations';
 
 export type PiratesRendererProps = {
   pirates: PirateModel[];
@@ -18,7 +20,9 @@ export const PiratesRenderer = ({ pirates }: PiratesRendererProps) => {
           className="border-1 border-amber-300 rounded-full w-[24px] h-[24px] flex justify-center items-center"
           style={{ backgroundColor: pirates[0]?.shipColor.toLowerCase() }}
         >
-          <span style={{ color: pirates[0]?.shipColor === ShipColor.BLACK ? 'white' : 'black' }}>{pirates.length}</span>
+          <span style={{ color: pirates[0]?.shipColor === ShipColorEnum.BLACK ? 'white' : 'black' }}>
+            {pirates.length}
+          </span>
         </div>
       </div>
     ));

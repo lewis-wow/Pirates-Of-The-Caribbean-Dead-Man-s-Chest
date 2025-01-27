@@ -1,4 +1,4 @@
-import { DaggerCard as DaggerCardModel } from '../../model/cards/DaggerCard';
+import { DaggerCard as DaggerCardModel } from '../../server/model/cards/DaggerCard';
 
 export type DaggerCardRendererProps = {
   daggerCardModel: DaggerCardModel;

@@ -1,16 +1,18 @@
+'use client';
+
 import { match, P } from 'ts-pattern';
-import { Card as CardModel } from '../model/cards/Card';
-import { Pirate as PirateModel } from '../model/Pirate';
-import { Ship as ShipModel } from '../model/tiles/Ship';
+import { Card as CardModel } from '../server/model/cards/Card';
+import { Pirate as PirateModel } from '../server/model/Pirate';
+import { Ship as ShipModel } from '../server/model/tiles/Ship';
 import { Ship as ShipComponent } from './Ship';
-import { Model } from '../model/Model';
+import { Model } from '../server/model/Model';
 import { PlayableTile } from './PlayableTile';
 import { CoinsRenderer } from './CoinsRenderer';
 import { CoinRenderer } from './CoinRenderer';
-import { Coin as CoinModel } from '../model/Coin';
+import { Coin as CoinModel } from '../server/model/Coin';
 import { PiratesRenderer } from './PiratesRenderer';
-import { EmptySpace } from '../model/tiles/EmptySpace';
-import { Compas as CompasModel } from '../model/cards/compas/Compas';
+import { EmptySpace } from '../server/model/tiles/EmptySpace';
+import { Compas as CompasModel } from '../server/model/cards/compas/Compas';
 import { CompasTile } from './CompasTile';
 import { UnknownRenderer } from './UnknownRenderer';
 

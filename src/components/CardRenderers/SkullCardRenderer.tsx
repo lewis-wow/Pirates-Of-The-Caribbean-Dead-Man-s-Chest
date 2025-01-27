@@ -1,4 +1,4 @@
-import { SkullCard as SkullCardModel } from '../../model/cards/SkullCard';
+import { SkullCard as SkullCardModel } from '../../server/model/cards/SkullCard';
 
 export type SkullCardRendererProps = {
   skullCardModel: SkullCardModel;

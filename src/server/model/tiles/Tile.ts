@@ -1,10 +1,14 @@
+import { TileTypeEnum } from '@/validations';
 import { Coin } from '../Coin';
 import { Model } from '../Model';
 import { Pirate } from '../Pirate';
 
 export class Tile extends Model {
-  protected coins: Coin[] = [];
-  protected pirates: Pirate[] = [];
+  tileType: TileTypeEnum = TileTypeEnum.BASIC;
+  isFlipped = true;
+  tooltip?: string;
+  coins: Coin[] = [];
+  pirates: Pirate[] = [];
 
   addPirate(pirate: Pirate | Pirate[]): void {
     const pirates = Array.isArray(pirate) ? pirate : [pirate];

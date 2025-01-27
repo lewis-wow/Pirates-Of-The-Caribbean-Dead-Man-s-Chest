@@ -1,4 +1,4 @@
-import { BlackPearlCard as BlackPearlCardModel } from '../../model/cards/BlackPearlCard';
+import { BlackPearlCard as BlackPearlCardModel } from '../../server/model/cards/BlackPearlCard';
 
 export type BlackPearlCardRendererProps = {
   blackPearlCardModel: BlackPearlCardModel;

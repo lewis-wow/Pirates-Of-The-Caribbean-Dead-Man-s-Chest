@@ -1,4 +1,4 @@
-import { ThreeCoinsCard as ThreeCoinsCardModel } from '../../model/cards/ThreeCoinsCard';
+import { ThreeCoinsCard as ThreeCoinsCardModel } from '../../server/model/cards/ThreeCoinsCard';
 import { TileRenderer } from '../TileRenderer';
 
 export type ThreeCoinsCardRendererProps = {
